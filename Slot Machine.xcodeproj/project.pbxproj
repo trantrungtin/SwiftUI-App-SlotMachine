@@ -26,6 +26,7 @@
 		D7151FA5285C53E300BC137A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7151FA4285C53E200BC137A /* Extensions.swift */; };
 		D7151FA7285C59B000BC137A /* ReelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7151FA6285C59B000BC137A /* ReelView.swift */; };
 		D7151FA9285C603400BC137A /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7151FA8285C603400BC137A /* InfoView.swift */; };
+		D71CCD09285C7B2000BE36F0 /* PlaySound.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71CCD08285C7B2000BE36F0 /* PlaySound.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		D7151FA4285C53E200BC137A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		D7151FA6285C59B000BC137A /* ReelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReelView.swift; sourceTree = "<group>"; };
 		D7151FA8285C603400BC137A /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
+		D71CCD08285C7B2000BE36F0 /* PlaySound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySound.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 			children = (
 				D7151FA2285C402A00BC137A /* Modifiers.swift */,
 				D7151FA4285C53E200BC137A /* Extensions.swift */,
+				D71CCD08285C7B2000BE36F0 /* PlaySound.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7151FA9285C603400BC137A /* InfoView.swift in Sources */,
+				D71CCD09285C7B2000BE36F0 /* PlaySound.swift in Sources */,
 				D7151F7D285C366F00BC137A /* ContentView.swift in Sources */,
 				D7151FA5285C53E300BC137A /* Extensions.swift in Sources */,
 				D7151FA1285C3FC100BC137A /* LogoView.swift in Sources */,
@@ -358,6 +362,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Slot Machine/Preview Content\"";
@@ -376,6 +381,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tinonsoftware.Slot-Machine";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -387,6 +393,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Slot Machine/Preview Content\"";
@@ -405,6 +412,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tinonsoftware.Slot-Machine";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -27,6 +27,7 @@ struct ContentView: View {
         reels = reels.map({_ in
             Int.random(in: 0...symbols.count-1)
         })
+        playSoundFile(.spin)
     }
     
     private func checkWinning() {
@@ -34,6 +35,8 @@ struct ContentView: View {
             playerWins()
             if coins > highscore {
                 newHighScore()
+            } else {
+                playSoundFile(.win)
             }
         } else {
             playerLoses()
@@ -47,6 +50,7 @@ struct ContentView: View {
     private func newHighScore() {
         highscore = coins
         UserDefaults.standard.set(highscore, forKey: keyHighScore)
+        playSoundFile(.high_score)
     }
     
     private func playerLoses() {
@@ -57,17 +61,20 @@ struct ContentView: View {
         betAmount = 20
         isActiveBet20 = true
         isActiveBet10 = false
+        playSoundFile(.casino_chip)
     }
     
     private func activateBet10() {
         betAmount = 10
         isActiveBet20 = false
         isActiveBet10 = true
+        playSoundFile(.casino_chip)
     }
     
     private func isGameOver() {
         if coins <= 0 {
             showingModel = true
+            playSoundFile(.game_over)
         }
     }
     
@@ -76,6 +83,7 @@ struct ContentView: View {
         highscore = 0
         coins = 100
         activateBet10()
+        playSoundFile(.chimeup)
     }
 
     // MARK: - BODY
@@ -132,6 +140,7 @@ struct ContentView: View {
                             .animation(.easeOut(duration: Double.random(in: 0.5...0.7)))
                             .onAppear {
                                 self.animatingSymbol.toggle()
+                                playSoundFile(.riseup)
                             }
                     }
                     
