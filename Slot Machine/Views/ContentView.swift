@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     // MARK: - PROPERTIES
+    @State private var showingInfoView = false
 
     // MARK: - BODY
     var body: some View {
@@ -134,6 +135,7 @@ struct ContentView: View {
                     }
                 }
             }
+            // MARK: - BUTTONS
             .overlay(
                 Button(action: {
 
@@ -145,7 +147,7 @@ struct ContentView: View {
             )
             .overlay(
                 Button(action: {
-
+                    self.showingInfoView = true
                 }) {
                     Image(systemName: "info.circle")
                 }
@@ -157,6 +159,9 @@ struct ContentView: View {
 
             // MARK: - POPUP
         } //: ZSTACK
+        .sheet(isPresented: $showingInfoView) {
+            InfoView()
+        }
     }
 }
 
