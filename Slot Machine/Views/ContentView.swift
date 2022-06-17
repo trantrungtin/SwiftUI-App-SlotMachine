@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     // MARK: - PROPERTIES
     @State private var showingInfoView = false
-    @State private var highscore: Int = 0
+    @State private var highscore: Int = UserDefaults.standard.integer(forKey: keyHighScore)
     @State private var coins: Int = 100
     @State private var betAmount: Int = 10
     @State private var reels: Array = [0, 1, 2]
@@ -36,7 +36,6 @@ struct ContentView: View {
         } else {
             playerLoses()
         }
-        print(coins, highscore, betAmount)
     }
     
     private func playerWins() {
@@ -45,6 +44,7 @@ struct ContentView: View {
     
     private func newHighScore() {
         highscore = coins
+        UserDefaults.standard.set(highscore, forKey: keyHighScore)
     }
     
     private func playerLoses() {
@@ -67,6 +67,13 @@ struct ContentView: View {
         if coins <= 0 {
             showingModel = true
         }
+    }
+    
+    private func resetGame() {
+        UserDefaults.standard.set(0, forKey: keyHighScore)
+        highscore = 0
+        coins = 100
+        activateBet10()
     }
 
     // MARK: - BODY
@@ -202,7 +209,7 @@ struct ContentView: View {
             // MARK: - BUTTONS
             .overlay(
                 Button(action: {
-
+                    self.resetGame()
                 }) {
                     Image(systemName: "arrow.2.circlepath.circle")
                 }
