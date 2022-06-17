@@ -19,6 +19,7 @@ struct ContentView: View {
     @State private var showingModel: Bool = false
     @State private var animatingSymbol: Bool = false
     @State private var animatingModel: Bool = false
+    let haptics = UINotificationFeedbackGenerator()
     let symbols = ["gfx-bell", "gfx-cherry", "gfx-coin", "gfx-grape", "gfx-seven", "gfx-strawberry"]
     
     // MARK: - FUNCTIONS
@@ -28,6 +29,7 @@ struct ContentView: View {
             Int.random(in: 0...symbols.count-1)
         })
         playSoundFile(.spin)
+        haptics.notificationOccurred(.success)
     }
     
     private func checkWinning() {
@@ -62,6 +64,7 @@ struct ContentView: View {
         isActiveBet20 = true
         isActiveBet10 = false
         playSoundFile(.casino_chip)
+        haptics.notificationOccurred(.success)
     }
     
     private func activateBet10() {
@@ -69,6 +72,7 @@ struct ContentView: View {
         isActiveBet20 = false
         isActiveBet10 = true
         playSoundFile(.casino_chip)
+        haptics.notificationOccurred(.success)
     }
     
     private func isGameOver() {
@@ -335,7 +339,9 @@ struct ContentView: View {
             }
             
         } //: ZSTACK
-        .sheet(isPresented: $showingInfoView) {
+        .sheet(isPresented: $showingInfoView, onDismiss: {
+            stopSound()
+        }) {
             InfoView()
         }
     }

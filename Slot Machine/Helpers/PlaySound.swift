@@ -21,6 +21,10 @@ private func playSound(sound: String, type: String) {
     }
 }
 
+func stopSound() {
+    audioPlayer?.stop()
+}
+
 enum SoundFile: String {
     case spin = "spin"
     case win = "win"
@@ -29,6 +33,7 @@ enum SoundFile: String {
     case game_over = "game-over"
     case chimeup = "chimeup"
     case riseup = "riseup"
+    case background = "background-music"
 }
 
 func playSoundFile(_ file: SoundFile) {
