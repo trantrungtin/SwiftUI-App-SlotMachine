@@ -112,7 +112,6 @@
 				D7151F8B285C386A00BC137A /* riseup.mp3 */,
 				D7151F89285C386A00BC137A /* spin.mp3 */,
 				D7151F8A285C386A00BC137A /* win.mp3 */,
-				D7151F9E285C3D7B00BC137A /* Constant.swift */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -140,6 +139,7 @@
 		D7151F9D285C3D6600BC137A /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				D7151F9E285C3D7B00BC137A /* Constant.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";

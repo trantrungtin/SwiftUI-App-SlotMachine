@@ -12,3 +12,4 @@ import SwiftUI
 let colorPink = Color("ColorPink")
 let colorPurple = Color("ColorPurple")
 let colorTransparentBlack = Color("ColorTransparentBlack")
+let colorYellow = Color("ColorYellow")
